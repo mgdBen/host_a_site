@@ -10,13 +10,9 @@ let me SSH to server (DONE)
 
 download nginx app (DONE)
 
-_____________________________________________________________________________
-configre nginx app (woo boy)
+configre nginx app (done)
 
-_____________________________________________________________________________
-files in their own folder server
-
-create opening NGINX port
+files in their own folder server (1 file DONE)
 
 point domain to server
 
