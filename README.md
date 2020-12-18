@@ -1,4 +1,4 @@
-This readme is going to server as a step by step instruction manual for how I took this simple site live. Following this guide should help you get the basics up and running. It's also going to help cement the information for me. Please let me know if anything here is confusing or not clear. The biggest frustrations I had while learning how to set this was up was getting a bad doc. I am strively to make this the doc I wished I had, but it's for you, so if it's not clear tell me and I'll adjust it.   
+This readme is going to server as a step by step instruction manual for how I took this simple site live. Following this guide should help you get the basics up and running. It's also going to help cement the information for me. Please let me know if anything here is confusing or not clear. The biggest frustrations I had while learning how to set this was up was getting a bad doc. I am striving to make this the doc I wished I had, but it's for you, so if it's not clear tell me and I'll adjust it.   
 
 **SERVER CREATION:** 
 1. Create/Login your AWS account. Access EC2.
