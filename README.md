@@ -105,10 +105,9 @@ Setup for the following can be done differently. I am still learning the in's an
     nginx: configuration file /etc/nginx/nginx.conf test is successful
     ``` 
 7. If there are no errors run command: `sudo systemctl restart nginx`.
-Your server is now configured and good to go! You can test it by going to the instance page and opening the `Public IPv4 address` in your browser. You should see the index.html page displayed here that we created in step 1b.
 
 **TAKE SITE LIVE AT YOUR DOMAIN NAME (HTTP):**
-1. Copy the `Private IPv4 address` from your instance page on aws.
+1. Copy the `Public IPv4 address` from your instance page on aws.
 2. Create an A record in your DNS for your domain (must match the domain in the server block from 3c) (root domain in dns)
 3. Create a record poiting to the same ip for host www, or have www redirect to root.
 
