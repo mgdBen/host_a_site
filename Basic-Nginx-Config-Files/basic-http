@@ -2,7 +2,7 @@ mserver {
         listen 80;
         listen [::]:80;
 
-        root /opt/www/bhnresume/html;
+        root /opt/www/websitename/html;
         index index.html index.htm index.nginx-debian.html;
 
         server_name websitename.com www.websitename.com;
