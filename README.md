@@ -39,7 +39,7 @@ Your server is now up and running! It may take a minute or two for the instance 
     c) Hit open! You will need to enter the password you selected for your keys. 
         - You should not be looking at the command line interface for your server!
 
-**BASIC NGINX CONFIG:**
+**BASIC NGINX CONFIG:** 
 Now that you are logged into the server, we can get things running!
 1. Run commands: `sudo apt update` then `sudo apt install nginx` (updates server and installs nginx)
 2. We now want to configure the internal firewall:
