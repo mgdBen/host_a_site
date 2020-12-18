@@ -27,19 +27,19 @@ Your server is now up and running! It may take a minute or two for the instance 
 4. Open PuttyGen and Press `Load`. Select the .pem file you just downloaded.
 5. Save a public and private key (RSA). Remember where!
 6. Now you can open Putty: 
-    a) Connection
+    - a) Connection
         - Data: Auto-login username:`ubuntu` (will be different if you are not using ubuntu)
         - SSH
             - Auth: Private key file for authentication: browse and select the .ppk you saved in step 5. 
-    b) Session
+    - b) Session
         - Host Name: This is your `Public IPv4 DNS` available on your instance summary
         - Port: 22 
         - Connection Type: SSH
         - Saved Sessions: The name you want to save. Hit Save. This will prevent you from needing to redo the putty config everytime you would like to access this server. 
-    c) Hit open! You will need to enter the password you selected for your keys. 
+    - c) Hit open! You will need to enter the password you selected for your keys. 
         - You should not be looking at the command line interface for your server!
 
-**BASIC NGINX CONFIG:** 
+**BASIC NGINX CONFIG:**
 Now that you are logged into the server, we can get things running!
 1. Run commands: `sudo apt update` then `sudo apt install nginx` (updates server and installs nginx)
 2. We now want to configure the internal firewall:
@@ -72,7 +72,7 @@ Now that you are logged into the server, we can get things running!
 **SERVE AN HTML FILE OVER HTTP:**
 Setup for the following can be done differently. I am still learning the in's and outs of Nginx configurations. This guide assumes you are following these steps. There is a lot of potential variation here, these are the steps I did:
 1. let's create a folder for your site and the simple html page we are going to serve.
-    a) You do this by running `sudo mkdir -p /opt/www/websitename/html/` then `sudo chown -R $USER:$USER /opt/www/bhnresume/html` then `sudo chmod -R 755 /opt/www/bhnresume`. This is telling the server to make the directory and all parent directories that don't exist. `websitename` should be your website name.
+    - a) You do this by running `sudo mkdir -p /opt/www/websitename/html/` then `sudo chown -R $USER:$USER /opt/www/bhnresume/html` then `sudo chmod -R 755 /opt/www/bhnresume`. This is telling the server to make the directory and all parent directories that don't exist. `websitename` should be your website name.
 
         ```
         Breakdown:
@@ -87,16 +87,16 @@ Setup for the following can be done differently. I am still learning the in's an
         5: give group on this file read+execute
         5: give everyone else read+execute
         ```
-    b) run command `sudo nano /opt/www/websitename/html/index.html` This will create and open index.html into the new directory you created in step 1. 
+    - b) run command `sudo nano /opt/www/websitename/html/index.html` This will create and open index.html into the new directory you created in step 1. 
         - I have a default html file you can use in this repo under [html-files/tutorial-basic-html/index.html](https://github.com/mgdBen/host_a_site/tree/main/html-files/tutorial-basic-html), but I would encourage you to create your own.
         - Either copy my tutorial file or one of your files, then save and exit. (In nano Paste:right-click / exit and save is `ctl`+`x`, then `y`, then `enter`.)
         - You can check to see if it was successful by hitting the up arrow (to get previous command) and then enter.       - This will run the previous command again and you should have opened index.html and you should see the file now!
 2. We know have the file that we want to host on our site, but we need to tell nginx that. We are now going to create a server block which is going to tell nginx to listen to port 80 and serve this file there. You will need to have a domain now, so if you do not have one pause and go buy one. GoDaddy, Google and Amazon are three of the largest domain registrars.
 3. Run command `sudo nano /etc/nginx/sites-available/websitename`.
-    a) copy the basic file block available in this repo under [/Basic-Nginx-Config-Files/basic-http](https://github.com/mgdBen/host_a_site/tree/main/Basic-Nginx-Config-Files)
-    b) paste this into the file you have open on your server
-    c) replace all instances of `websitename` with the name of your site. It will need to match the domain name you purchased. 
-    d) Save and Exit. (`right-click`, `ctl`+`x`,`y`,`enter`)
+    - a) copy the basic file block available in this repo under [/Basic-Nginx-Config-Files/basic-http](https://github.com/mgdBen/host_a_site/tree/main/Basic-Nginx-Config-Files)
+    - b) paste this into the file you have open on your server
+    - c) replace all instances of `websitename` with the name of your site. It will need to match the domain name you purchased. 
+    - d) Save and Exit. (`right-click`, `ctl`+`x`,`y`,`enter`)
 4. Run command `sudo ln -s /etc/nginx/sites-available/websitename /etc/nginx/sites-enabled/` This tells Nginx where to find the config file we created.
 5. Run command `sudo nano /etc/nginx/nginx.conf` delete the `#` from the line `# server_names_hash_bucket_size 64;` so that the line says `server_names_hash_bucket_size 64;`. Save and exit: (`right-click`, `ctl`+`x`,`y`,`enter`)
 6. Run command `sudo nginx -t` This will check your config files and tell you if there are errors. You want to see: 
