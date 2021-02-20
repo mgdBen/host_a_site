@@ -14,7 +14,9 @@ This readme is going to server as a step by step instruction manual for how I to
 5. Select an existing key pair or create a new keypair
 
     a) Create and name your keypair.
+    
     b) Download
+    
     c) Make sure you save the .pem key where you will not lose it.
     
 Your server is now up and running! It may take a minute or two for the instance to spin up, you can move onto the next section once the Instance State says Running. Pull up the Instance by clicking on the Instance ID while we wait. We'll need some info from there. 
