@@ -76,7 +76,7 @@ Now that you are logged into the server, we can get things running!
 **SERVE AN HTML FILE OVER HTTP:**
 Setup for the following can be done differently. I am still learning the in's and outs of Nginx configurations. This guide assumes you are following these steps. There is a lot of potential variation here, these are the steps I did:
 1. let's create a folder for your site and the simple html page we are going to serve.
-    - a) You do this by running `sudo mkdir -p /opt/www/websitename/html/` then `sudo chown -R $USER:$USER /opt/www/bhnresume/html` then `sudo chmod -R 755 /opt/www/bhnresume`. This is telling the server to make the directory and all parent directories that don't exist. `websitename` should be your website name.
+    - a) You do this by running `sudo mkdir -p /opt/www/websitename/html/` then `sudo chown -R $USER:$USER /opt/www/website/html` then `sudo chmod -R 755 /opt/www/website`. This is telling the server to make the directory and all parent directories that don't exist. `websitename` should be your website name.
 
         ```
         Breakdown:
