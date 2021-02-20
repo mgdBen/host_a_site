@@ -56,7 +56,7 @@ Now that you are logged into the server, we can get things running!
             Nginx HTTPS
             OpenSSH
             ```
-    - Run commands: `sudo ufw allow Nginx Full` & `sudo ufw allow OpenSSH` (Configures your internal firewall for the same rule set that we made during server creation)   
+    - Run commands: `sudo ufw allow 'Nginx Full'` & `sudo ufw allow 'OpenSSH'` (Configures your internal firewall for the same rule set that we made during server creation)   
     - Run command: `sudo ufw status`:
         - if you see `inactive`
             - Run command `sudo ufw enable` Hit yes. (Make sure you do not disconnect after enabling until OpenSSH is included under ufw status)
