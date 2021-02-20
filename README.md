@@ -41,7 +41,7 @@ Your server is now up and running! It may take a minute or two for the instance 
         - Connection Type: SSH
         - Saved Sessions: The name you want to save. Hit Save. This will prevent you from needing to redo the putty config everytime you would like to access this server. 
     - c) Hit open! You will need to enter the password you selected for your keys. 
-        - You should not be looking at the command line interface for your server!
+        - You should now be looking at the command line interface for your server!
 
 **BASIC NGINX CONFIG:**
 Now that you are logged into the server, we can get things running!
